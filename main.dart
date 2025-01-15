@@ -16,13 +16,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Row-Stack-Column'),
+      home: const MyHomePage(title: 'Containers'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
+
 
   final String title;
 
@@ -31,6 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,24 +41,25 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Stack(
+      body: Row (
         children: [
-          Container(width: 500, height: 500, color: Colors.indigo,),
-          Row(
-            children: [
-              Container(width: 100, height: 100,color: Colors.pink,),
-              Container(width: 100, height: 100,color: Colors.blueAccent,),
-              Column(
-                children: [
-                    Container(width: 100, height: 100, color: Colors.cyanAccent,),
-                    Container(width: 100, height: 100,color: Colors.greenAccent,),
-                ],
-              )
-            ],
-          )
-        ]
+          Container(
+            margin: const EdgeInsets.all(10.0),
+            width: 200,
+            height: 200,
+            child: Text("Merhaba"),
+            decoration: BoxDecoration(
+              color: Colors.blueAccent,
+              border: Border.all(
+                color: Colors.deepPurpleAccent,
+                width: 8.0,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
+          ),
+        ],
       )
+
     );
   }
 }
-
